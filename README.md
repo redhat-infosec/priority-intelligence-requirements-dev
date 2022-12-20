@@ -1,12 +1,16 @@
 # Developing Priority Intelligence Requirements @ Red Hat 
+- Why we developed the Red Hat PIRs process 
+- Step-by-Step Guide to the process
+- Template of the Red Hat PIRs process
+
 
 Making educated guesses on what is important and providing a dedicated effort to react to  requests for information from various stakeholders are good drivers for threat intelligence teams at an early stage of their maturity. However, if we want to be more confident when setting the scope of a data collection plan or the prioritization of our analytical deliverables, Priority Intelligence Requirements (PIRs) are an invaluable tool.
 
 ## Why we developed a new process at Red Hat
-Every book or paper on “How to set up a CTI program” will tell you that you need PIRs, but no matter how detailed such a document is, they will rarely tell you how to do it. Still, there are a couple of existing approaches, but their fundamental flaw - from our point of view - is the assumption that you can identify the “crown jewels” of your organization and that you understand what type of threat actors could be motivated to attack them. This is difficult for larger organizations with diverse and dynamic portfolios of products and services or organizations that have not faced sustained cyber attacks. Furthermore, the resulting PIRs based on the existing approaches tend to be quite general, and often are not specific enough for any organization. Instead, the process focuses almost exclusively on external threats without clearly defined links to your organization and its assets.
+Every book or paper on “How to set up a CTI program” will tell you that you need PIRs, but no matter how detailed such a document is, they will rarely tell you how to do it. Still, there are a couple of existing approaches [^1] , but their fundamental flaw - from our point of view - is the assumption that you can identify the “crown jewels” of your organization and that you understand what type of threat actors could be motivated to attack them. This is difficult for larger organizations with diverse and dynamic portfolios of products and services or organizations that have not faced sustained cyber attacks. Furthermore, the resulting PIRs based on the existing approaches tend to be quite general, and often are not specific enough for any organization. Instead, the process focuses almost exclusively on external threats without clearly defined links to your organization and its assets.
 
 ## What is the Red Hat approach to the process
-The basic assumption of the Red Hat approach was that part of the process will be a risk assessment exercise designed to help you understand what is important for your organization. We also wanted the resulting PIRs to answer WHAT could be attacked, by WHOM and HOW. 
+The basic assumption of the Red Hat approach was that part of the process will be a risk assessment exercise designed to help you understand what is important for your organization. We also wanted the resulting PIRs to answer WHAT could be attacked, by WHOM and HOW [^2] . 
 
 > "If you know the enemy and know yourself, you need not fear the result of a hundred battles" 
 > Sun Tzu, The Art of War
@@ -38,7 +42,7 @@ Example:
 - third-party services
 - customer entrusted data
 - employee PII
-- production pipeline
+- production pipeline [^3]
 
 **Output:** “Supporting ASSETS” column in the Sheet listing the ELEMENTS representing your organization and its strategy (see Step 1)
 
@@ -69,7 +73,7 @@ Assess the risks of each TA and IAV for your organization. Consider the impact o
 #### Step 5 Mapping exercise 
 Map the two most relevant TA and IAV from the list of top 5 TA and IAV to each of the top 10 ELEMENTS.
 
-FINAL SCORE = ELEMENT value * TA μ value (TA1+TA2) * AV μ value (IAV1 + IAV2)
+FINAL SCORE = ELEMENT value [^4] * TA μ [^5] value (TA1+TA2) * AV μ value (IAV1 + IAV2)
 
 **Output:** Ranked list of ELEMENTS with mapped TA and IAV = your PIRs in the form of keywords
 
@@ -90,3 +94,9 @@ If you follow the above described process, the PIRs will offer you not only a to
 
 ## Red Hat PIR development process template
 You can make a copy and customize the [the Red Hat PIRs process  template](https://docs.google.com/spreadsheets/d/1ux_7epS3AWPQO_CKDV90n4u3G4Tk1kZ_LYSuQqve76w/edit?usp=sharing) to make it work for your organization.
+
+[^1]: The most elaborated publicly available process I’m aware of was developed by [Intel471](https://intel471.com/resources/cu-girh-download-request)
+[^2]: To be more precise, by HOW we mean what could be the initial access vector.
+[^3]: At Red Hat we worked with 25 ELEMENTS.
+[^4]: Top 1 TA and IAV will have value 5, …Top 5 TA and IAV will have value 1; Top 1 and 2 ELEMENTS will have value 5, …Top 9 and 10 ELEMENTS will have value 1.
+[^5]: Mean of the values of the two TA and mean of the values of the two IAV. 
