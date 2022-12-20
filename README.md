@@ -16,7 +16,7 @@ We knew from the beginning that the starting point of the process has to be that
 ## Overview of the process  
 The Red Hat process is based on two relatively simple risk assessment exercises divided by  internal and external focus. These two exercises are then merged in a mapping exercise and translated into a coherent text to determine the actual PIRs. Additional parts of the process can be a stakeholder review, approval by senior executives, and annual review of the PIRs.
 
-![Red Hat PIRs development process](PIRs_process_Blog-post.png "Red Hat PIRs development process")
+![Red Hat PIRs development process](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/PIRs_process_Blog-post.png "Red Hat PIRs development process")
 
 ## A STEP-BY-STEP GUIDE
 
