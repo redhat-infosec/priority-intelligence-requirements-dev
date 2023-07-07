@@ -74,6 +74,7 @@ Assess the risks of each TA and IAV for your organization. Consider the impact o
 Map the two most relevant TA and IAV from the list of top 5 TA and IAV to each of the top 10 ELEMENTS.
 
 Methodology: Focus Group Discussion (FGD) > agreed result (no median scoring etc.)
+
 FINAL SCORE = ELEMENT value [^4] * TA μ [^5] value (TA1+TA2) * AV μ value (IAV1 + IAV2)
 
 **Output:** Ranked list of ELEMENTS with mapped TA and IAV = your PIRs in the form of keywords
