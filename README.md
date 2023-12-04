@@ -1,7 +1,6 @@
 # Developing Priority Intelligence Requirements @ Red Hat v1.1
 
 In the rapidly evolving landscape of cyber threat intelligence (CTI), the formulation of Priority Intelligence Requirements (PIRs) stands as a crucial component of your CTI program and the planning and direction phase of the intelligence cycle. As a cyber threat intelligence analyst, you are likely familiar with the challenge of balancing limited resources within small CTI teams against the colossal task of delivering relevant, actionable information to decision-makers and stakeholders. This dilemma often leaves teams grappling with a choice: should they adopt a reactive stance, responding to emerging threats as they arise, or should they lean towards more proactive long term priorities. Integration of PIRs as a guiding principle will assist your program to pursue proactive strategic priorities more confidently without abandoning your reactive capabilities. This approach doesn't just enhance traditional functions like research, investigation, analysis, and reporting but also elevates advanced practices such as threat-informed defense, including threat hunting and detection engineering. 
-
 In this blog post, we delve into this pivotal process as we unravel the significance of PIRs in shaping a more effective and strategic CTI function, thereby enabling your team to make a more substantial impact within your organization.
 
 ## Retired v1.0
@@ -9,92 +8,94 @@ The original Red Hat process was structured around two distinct risk assessment 
 
 ![PIRs process v1.0](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/PIRs_process_v1.0.png)
 
-> "If you know the enemy and know yourself, you need not fear the result of a hundred battles" 
-> Sun Tzu, The Art of War
+On paper, the threat actor (TA) categorization and initial access vectors (IAV) presented well, offering a seemingly comprehensive story when presenting PIRs to stakeholders. However, as we repeatedly scaled this exercise across organizations, we encountered significant challenges. The process was labor-intensive, adding weeks of work and dozens of hours for the team, yet it didn't yield the expected value in operationalization. We also found that the general categorization of threat actors and initial access vectors lacked the depth needed for operationalization. What was missing was a finer granularity, like Tactics, Techniques, and Procedures (TTPs), and associated MITRE ATT&CK categorization. Recognizing this gap, we shifted our focus to aspects that provided more substantial inputs for the operationalization of PIRs.
 
-We knew from the beginning that the starting point of the process has to be that we “know ourselves”, but how to achieve this? Are there existing documents or processes that could help us? As information security practitioners we would be looking at data and system classification documents, lists of critical applications and business processes, but it became apparent that these are too low level and don’t provide a good perspective on what we, as a company, care about and where a potential attack would hurt the most. We decided to take a different approach; similarly to government entities that would build PIRs based on available higher-level strategic documents, we reviewed our business strategy, documents describing who we are as a company, as well as company-wide briefings and communications from our senior leaders during which they shared business priorities. We used this information to extract keywords that define various aspects of the organization such as the mission and vision, the business strategy, and core values. We call these keywords ELEMENTS.
+## Overview of the process
+This is a five-step process: Step 1, identifying key organizational elements from strategic documents; Step 2, mapping these elements to supporting assets; Step 3, linking elements with types of adversarial operations using a custom classification; Step 4, assessing risks using a likelihood/impact matrix to determine the appeal of elements to attackers; and finally, Step 5 customizing PIRs into actionable intelligence requirements. 
 
-## Overview of the process  
-The Red Hat process is based on two relatively simple risk assessment exercises divided by  internal and external focus. These two exercises are then merged in a mapping exercise and translated into a coherent text to determine the actual PIRs. Additional parts of the process can be a stakeholder review, approval by senior executives, and annual review of the PIRs.
-
+![PIRs process v1.1](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/PIRs_process_v1.1.png)
 
 ## A STEP-BY-STEP GUIDE
 
-#### Step 1 (INTERNAL FOCUS) core ELEMENTS of your organization’s business and strategy 
-Extract keywords representing your organization, its strategy, mission and vision from high-level strategic documents defining your organization and depicting your organization’s strategy.
+#### STEP 1: Extracting Organizational ELEMENTS
+The initial step involves identifying the core elements of your organization. These elements are not directly related to information security but are crucial in defining your organization's identity. They are derived from high-level strategic documents, such as annual reports, business strategies, senior leadership communications , and even the 'About' section of your website. These documents contain keywords, topics, or short sentences that encapsulate your organization's strategy, mission, and vision.
 
-Examples of the keywords:
-- Open hybrid cloud built on the technological foundation of Red Hat Enterprise Linux, Red Hat OpenShift, and Red Hat Ansible Automation Platform. 
-- Custodian of corporate information
-- Hybrid work model
-- Open and inclusive culture
+**Questions that can help you to define ELEMENTS of your organizations:** 
+- What features define your organization?
+- What makes your organization unique?
+- What are the most important aspects of your strategy?
+- Why is anyone buying your products or services?
+- What is your competitive advantage? How do you compare to your competitors?
+- Are certain products or services more important than others?
+- What valuable data do you have? Is there data that keeps you ahead of competitors, proprietary information, R&D, data on relations with partners or customers, or data that would cause damage if released?
+These elements should describe the essence of your organization, including both obvious and subtle aspects. They define what makes your organization unique, why customers choose your products or services, and what sets you apart from competitors. This also includes valuable data like proprietary information, R&D, partner relationships, and sensitive corporate information.
 
-**Output:** Sheet listing the ELEMENTS representing your organization and its strategy
+**Examples of the elements for a fictitious electric vehicle producer Stellar Electric[^1]:**
+EU-based, electric vehicle industry company with revenue over 1 billion EUR
+Research and Development in EU and China drives the company success
+Car production in EU and China
+Limited battery production capacity
+Supply chain spans multiple countries, including China and Chile. 
+Proprietary range-boosting technology: 20% longer range compared to competitors
+Public perception of Stellar environmental impact is vital to the brand reputation       
+Software-first approach; proprietary In-vehicle software
+Advanced safety features 
 
-#### Step 2 (INTERNAL FOCUS) ASSETS and technologies in support of the ELEMENTS 
-Map the most important ASSETS and technologies of your organization to the ELEMENTS (See Step 1). We used high-level descriptions of our infrastructure, products, services, information assets, third party products, third party services, etc. because the existing technology and information asset management documentation is too detailed.  
+**Sub-STEP: FUNCTION**
+Linked to these elements is a sub-step called 'Function.' It ties the elements back to information security by clarifying what needs to be protected from an information security standpoint. For example, if an element is 'limited battery production,' its function might be ensuring continuous battery production. This context helps in understanding the element from an information security perspective and guides the subsequent risk assessment exercise.
 
-Example: 
-- third-party services
-- customer entrusted data
-- employee PII
-- production pipeline [^3]
+**Output:** Sheet listing the ELEMENTS and FUNCTION of the ELEMENTS of your organization
 
-**Output:** “Supporting ASSETS” column in the Sheet listing the ELEMENTS representing your organization and its strategy (see Step 1)
+![Examples of the Elements and Function for Stellar Electric](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/Function.png)
 
-#### Step 3 (INTERNAL FOCUS) ELEMENTS risk assessment exercise 
-Use the sheet with the list of ELEMENTS and supporting ASSETS for the exercise, assessing the likelihood and impact of a potential attack on the supporting ASSETS and the ELEMENTS. Collect inputs from a wide spectrum of stakeholders in your organization. Use the median score for each ELEMENT. Rank the ELEMENTS by the median score and use the top 10 ELEMENTS for the mapping exercise (Step 5). 
+#### STEP 2: ASSETS Mapping to Elements
+Once you have defined your organizational elements, the next step is to map the supporting technology, data, or information to these elements. This step can be high-level or detailed, depending on your approach. For instance, if your element is operational technology supporting battery production, the key asset might be the Operational Technology and Industrial Control Systems that keep the production running. For proprietary technologies, the critical asset could be the documents containing proprietary information.
+This step is about linking the abstract elements of your organization to tangible assets. It's a crucial bridge between the theoretical understanding of your organization and the practical aspects of protecting it. When developing PIRs at Red Hat, we kept this high-level, avoiding overly specific details from Configuration Management Databases or similar documentation, which can be overwhelming and too detailed for this exercise.
 
-**Output:** Scored and ranked ELEMENTS and your top 10 ELEMENTS 
+![Examples of the Supporting Assets](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/Assets-types.png)
 
-#### Step 4 (EXTERNAL FOCUS) Threat landscape risk assessment 
-List generic types of threat actors (TA). You can go into more detail and work with specific threat groups and individual actors at a later stage when you are developing Specific Intelligence Requirements (SIRs) which you derive from the PIRs.   
+These two steps form the foundation of a robust CTI process, aligning your organization's essence with its security needs, and setting the stage for mapping of adversarial threat operations and risk assessment in the next steps.
 
-Example:
-- state actors
-- cybercriminals
-- hacktivist
+![Examples of the Elements, Function and Assets for Stellar Electric](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/Assets.png)
 
-List generic types of initial access vectors (IAV)
+**Output:** “Supporting ASSETS” column in the Sheet listing the ELEMENTS of your organization
 
-Example:
-- social engineering
-- vulnerability exploitation
-- supply chain attack
+#### STEP 3: Linking ELEMENTS with Types of Adversarial Operations
+This step involves connecting the previously identified organizational elements with specific types of adversarial operations. We found that existing classifications of cyber attacks didn't quite fit our needs, leading us to develop our own classification. This classification focuses on the impact of cyber attacks on business operations and also on applicability of the terms used in the classification in threat intelligence platforms (TIPs), which is vital for operationalization. So for example, we use the relatively vague term “ransomware” instead of more precise variants, because that is a term that will more likely provide search results in TIPs. Types of operations in our classification include ransomware, espionage, financial fraud, denial of service, and “downstream” supply chain attacks where your organization is a target rather than supply chain as an initial access  vector.
 
-Assess the risks of each TA and IAV for your organization. Consider the impact of a potential attack, likelihood of attack in the next two years and current targeting of the TA or relevance of the IAV vector for your organization. Collect inputs from a wide spectrum of stakeholders in your organization. Use the median score for each TA and IAV. Rank the TA and IAV by the median score and use the top 5 TA and top 5 IAV for the mapping exercise (Step 5) 
+![Types of Adversarial Operations, corresponding MITRE ATT&CK techniques and keywords](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/Types-of-adversarial-operations.png)
 
-**Output:** Scored and ranked TA and IAV and your top 5 TA and top 5 IAV
+If this classification doesn't suit your needs, existing frameworks like MITRE ATT&CK, STRIDE, VERIS Framework, CAPEC, or ENISA and FIRST taxonomies can be utilized. Alternatively, attacks can be categorized based on their impact on confidentiality, integrity, and availability.
 
-#### Step 5 Mapping exercise 
-Map the two most relevant TA and IAV from the list of top 5 TA and IAV to each of the top 10 ELEMENTS.
+**Output:** Types of adversarial operations linkend to the ELEMENTS of your organization
 
-Methodology: Focus Group Discussion (FGD) > agreed result (no median scoring etc.)
+#### STEP 4: Risk Assessment Using Likelihood/Impact Matrix
+The fourth step involves a risk assessment exercise using a likelihood/impact matrix. This step aims to foster a specific mindset towards risk assessment. We refer to 'likelihood' as 'appeal,' especially when communicating with non-InfoSec personnel, as it aids in understanding the exercise. The focus is therefore on determining the attractiveness of an element or asset to attackers and the potential consequences of a compromise.
 
-FINAL SCORE = ELEMENT value [^4] * TA μ [^5] value (TA1+TA2) * AV μ value (IAV1 + IAV2)
+ ![The options for likelihood (appeal) and impact questions](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/RiskAssessment-options.png)
 
-**Output:** Ranked list of ELEMENTS with mapped TA and IAV = your PIRs in the form of keywords
+**Output:** Scored and ranked ELEMENTS, FUNCTIONS, ASSETS and Types of Adversarial Operations 
 
-#### Step 6 Translate the ranked ELEMENTS with mapped TA and IAV to PIRs
-Use the ranked list of Top 10 ELEMENTS with mapped TA and IAV to generate the PIRs. The PIRs can be in any form that is appropriate for the intended operationalization: short statements, intelligence questions, requests for information etc. 
+ ![The final risk score for each ELEMENT will assist you in ranking of the PIRs](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/RiskAssessment.png)
+
+#### STEP 5: Customization of the PIRs
+At the end of the risk assessment exercise, you'll have a ranked list of the top five or top ten elements - depending on your appetite for a number of PIRs - along with the mapped types of adversarial operations. This last step involves determining the format of the final PIRs. Will they be short statements, intelligence questions, requests for information, or something else? We opted to keep it straightforward at Red Hat and use the ranked elements in their original form.
+Occasionally, you may need to rephrase results into more actionable statements. For instance, an element like “EU-based, electric industry company with revenue over 1 billion EUR” might be translated into a more intelligible PIR, such as “Threats to STELLAR based on its revenue, geography, industry, and market position.”
+This comprehensive process ensures that PIRs are not only tailored to the specific needs and characteristics of your organization but also actionable and relevant in the context of your security posture.
+
+ ![Examples of PIRs of Stellar Electric](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/PIRs-final.png)
 
 **Output:** PIRs
 
-## Adjust the process to your organization’s needs 
-If you know the “crown jewels” of your organization well, you can do just the external threat landscape assessment. If you are unclear on what the “crown jewels” of your organization are and you have people available who understand both the organization and the threat landscape, you can do a single combined INTERNAL and EXTERNAL exercise in which you immediately map the threat actors and initial access vectors to the ELEMENTS. You can easily adjust the process to your organization’s needs.
-Possible additional steps in the above described PIR development process include a stakeholder review of the PIRs that could generate additional insights. The PIRs can also be consulted and approved by an appropriate senior executive, if this is something that could help the implementation of the PIRs into your organization’s intelligence cycle.  
+## Scaling the process to multiple respondents
+If you want to ensure objectivity and limit the bias by individual analysts or individual teams, you will prefer to conduct the exercise on a larger scale. You should ideally engage multiple CTI stakeholders, including respondents with good knowledge of the business side of your organization in the mapping (STEP 3) and risk assessment exercise (STEP 4). The sheet for PIR development is designed for a single respondent, so in case of multiple respondents it's necessary to calculate median or average scores and manually rank the PIRs.  
 None of the subjects of the risk assessment exercises, such as your organization’s strategy, the threat actors or initial access vectors, are immutable. Periodical review of the PIRs is a necessary part of the process. On the other hand, even though the threat environment is highly dynamic and ever changing, your high-level PIRs should be relatively stable unless your organization is undergoing a major transition. 
  
 ## Process of iterations and gradual improvement
-To define the ELEMENTS and pose the right question that can be understood the same way across multiple stakeholders is not trivial. It is rather difficult to achieve the perfect PIRs process in year one. You might prefer to see the first attempt as a trial and seek inputs only from a selected number of people across your organization. Make sure they understand the questions and the risk assessment exercises the way you intended and try to collect as much feedback as possible. Use the lessons learned during the next iteration and engage a broader spectrum of people from your organization to get new perspectives and to avoid bias that your team could have. 
+To define the ELEMENTS and pose the right question that can be understood the same way across multiple stakeholders is not trivial. It is rather difficult to achieve the perfect PIRs process in year one. You might prefer to see the first attempt as a trial and seek inputs only from a selected number of stakeholders across your organization. Make sure they understand the questions and the risk assessment exercises the way you intended and try to collect as much feedback as possible. Use the lessons learned during the next iteration and engage a broader spectrum of people from your organization to get new perspectives and to avoid bias that your team could have. 
+PIRs will offer you not only a tool for your Cyber Threat Intelligence program, but the process of developing them will provide you and your team a great learning opportunity to explore your organization, engage with multiple teams across it, and investigate the relevance of a wide spectrum of threats to your attack surface and industry. 
 
-If you follow the above described process, the PIRs will offer you not only a tool for improvement of your Cyber Threat Intelligence or Threat Hunting program, but the process of developing them will provide you and your team a great learning opportunity to explore your organization, engage with multiple teams across it, and investigate the relevance of a wide spectrum of threats to your attack surface and industry. 
+## Red Hat PIR development process v1.1 template
+You can make a copy and customize the [the Red Hat PIRs process v1.1 template](https://docs.google.com/spreadsheets/d/1lnZOGX6Shm4NoT06APeRPXe4jEX0dCWDXTrmm60aOa8/edit?usp=sharing)
 
-## Red Hat PIR development process template
-You can make a copy and customize the [the Red Hat PIRs process  template](https://docs.google.com/spreadsheets/d/1ux_7epS3AWPQO_CKDV90n4u3G4Tk1kZ_LYSuQqve76w/edit?usp=sharing) to make it work for your organization.
-
-[^1]: The most elaborated publicly available process I’m aware of was developed by [Intel471](https://intel471.com/resources/cu-girh-download-request)
-[^2]: To be more precise, by HOW we mean what could be the initial access vector.
-[^3]: At Red Hat we worked with 25 ELEMENTS.
-[^4]: Top 1 TA and IAV will have value 5, …Top 5 TA and IAV will have value 1; Top 1 and 2 ELEMENTS will have value 5, …Top 9 and 10 ELEMENTS will have value 1.
-[^5]: Mean of the values of the two TA and mean of the values of the two IAV. 
+[^1]: Annual Report of mock-up company [Stellar Electric](https://drive.google.com/file/d/1gJ9s6ergncUr5LK_6s8HUwtQJOksD_lq/view)
