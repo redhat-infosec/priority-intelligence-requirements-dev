@@ -7,6 +7,7 @@ In this blog post, we delve into this pivotal process as we unravel the signific
 ## Retired v1.0
 The original Red Hat process was structured around two distinct risk assessment exercises, one focusing on internal factors and the other on external ones. These exercises were then combined into a mapping exercise, from which we derived a cohesive set of PIRs. The goal was ambitious: to address the 'What', 'Who', and 'How' of the threat landscape. 'What' referred to the data and infrastructure of our organization; 'Who' encompassed high-level descriptions of threat actors like state actors, organized crime, or hacktivists; and 'How' partly included types of initial access vectors.
 
+![PIRs process v1.0](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/PIRs_process_v1.0.png)
 
 > "If you know the enemy and know yourself, you need not fear the result of a hundred battles" 
 > Sun Tzu, The Art of War
@@ -16,7 +17,6 @@ We knew from the beginning that the starting point of the process has to be that
 ## Overview of the process  
 The Red Hat process is based on two relatively simple risk assessment exercises divided by  internal and external focus. These two exercises are then merged in a mapping exercise and translated into a coherent text to determine the actual PIRs. Additional parts of the process can be a stakeholder review, approval by senior executives, and annual review of the PIRs.
 
-![Red Hat PIRs development process](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/PIRs_process_Blog-post.png "Red Hat PIRs development process")
 
 ## A STEP-BY-STEP GUIDE
 
