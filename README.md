@@ -10,7 +10,7 @@ The original Red Hat process was structured around two distinct risk assessment 
 
 On paper, the threat actor (TA) categorization and initial access vectors (IAV) presented well, offering a seemingly comprehensive story when presenting PIRs to stakeholders. However, as we repeatedly scaled this exercise across organizations, we encountered significant challenges. The process was labor-intensive, adding weeks of work and dozens of hours for the team, yet it didn't yield the expected value in operationalization. We also found that the general categorization of threat actors and initial access vectors lacked the depth needed for operationalization. What was missing was a finer granularity, like Tactics, Techniques, and Procedures (TTPs), and associated MITRE ATT&CK categorization. Recognizing this gap, we shifted our focus to aspects that provided more substantial inputs for the operationalization of PIRs.
 
-## Overview of the process
+## Overview of the updated process (v1.1)
 This is a five-step process: Step 1, identifying key organizational elements from strategic documents; Step 2, mapping these elements to supporting assets; Step 3, linking elements with types of adversarial operations using a custom classification; Step 4, assessing risks using a likelihood/impact matrix to determine the appeal of elements to attackers; and finally, Step 5 customizing PIRs into actionable intelligence requirements. 
 
 ![PIRs process v1.1](https://github.com/redhat-infosec/priority-intelligence-requirements-dev/blob/main/PIRs_process_v1.1.png)
