@@ -1,16 +1,12 @@
-# Developing Priority Intelligence Requirements @ Red Hat 
-- Why we developed the Red Hat PIRs process 
-- Step-by-Step Guide to the process
-- Template of the Red Hat PIRs process
+# Developing Priority Intelligence Requirements @ Red Hat v1.1
 
+In the rapidly evolving landscape of cyber threat intelligence (CTI), the formulation of Priority Intelligence Requirements (PIRs) stands as a crucial component of your CTI program and the planning and direction phase of the intelligence cycle. As a cyber threat intelligence analyst, you are likely familiar with the challenge of balancing limited resources within small CTI teams against the colossal task of delivering relevant, actionable information to decision-makers and stakeholders. This dilemma often leaves teams grappling with a choice: should they adopt a reactive stance, responding to emerging threats as they arise, or should they lean towards more proactive long term priorities. Integration of PIRs as a guiding principle will assist your program to pursue proactive strategic priorities more confidently without abandoning your reactive capabilities. This approach doesn't just enhance traditional functions like research, investigation, analysis, and reporting but also elevates advanced practices such as threat-informed defense, including threat hunting and detection engineering. 
 
-Making educated guesses on what is important and providing a dedicated effort to react to  requests for information from various stakeholders are good drivers for threat intelligence teams at an early stage of their maturity. However, if we want to be more confident when setting the scope of a data collection plan or the prioritization of our analytical deliverables, Priority Intelligence Requirements (PIRs) are an invaluable tool.
+In this blog post, we delve into this pivotal process as we unravel the significance of PIRs in shaping a more effective and strategic CTI function, thereby enabling your team to make a more substantial impact within your organization.
 
-## Why we developed a new process at Red Hat
-Every book or paper on “How to set up a CTI program” will tell you that you need PIRs, but no matter how detailed such a document is, they will rarely tell you how to do it. Still, there are a couple of existing approaches [^1] , but their fundamental flaw - from our point of view - is the assumption that you can identify the “crown jewels” of your organization and that you understand what type of threat actors could be motivated to attack them. This is difficult for larger organizations with diverse and dynamic portfolios of products and services or organizations that have not faced sustained cyber attacks. Furthermore, the resulting PIRs based on the existing approaches tend to be quite general, and often are not specific enough for any organization. Instead, the process focuses almost exclusively on external threats without clearly defined links to your organization and its assets.
+## Retired v1.0
+The original Red Hat process was structured around two distinct risk assessment exercises, one focusing on internal factors and the other on external ones. These exercises were then combined into a mapping exercise, from which we derived a cohesive set of PIRs. The goal was ambitious: to address the 'What', 'Who', and 'How' of the threat landscape. 'What' referred to the data and infrastructure of our organization; 'Who' encompassed high-level descriptions of threat actors like state actors, organized crime, or hacktivists; and 'How' partly included types of initial access vectors.
 
-## What is the Red Hat approach to the process
-The basic assumption of the Red Hat approach was that part of the process will be a risk assessment exercise designed to help you understand what is important for your organization. We also wanted the resulting PIRs to answer WHAT could be attacked, by WHOM and HOW [^2] . 
 
 > "If you know the enemy and know yourself, you need not fear the result of a hundred battles" 
 > Sun Tzu, The Art of War
