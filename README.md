@@ -30,16 +30,18 @@ The initial step involves identifying the core elements of your organization. Th
 - What valuable data do you have? Is there data that keeps you ahead of competitors, proprietary information, R&D, data on relations with partners or customers, or data that would cause damage if released?
 These elements should describe the essence of your organization, including both obvious and subtle aspects. They define what makes your organization unique, why customers choose your products or services, and what sets you apart from competitors. This also includes valuable data like proprietary information, R&D, partner relationships, and sensitive corporate information.
 
+These elements should describe the essence of your organization, including both obvious and subtle aspects. They define what makes your organization unique, why customers choose your products or services, and what sets you apart from competitors. This also includes valuable data like proprietary information, R&D, partner relationships, and sensitive corporate information.
+
 **Examples of the elements for a fictitious electric vehicle producer Stellar Electric[^1]:**
-EU-based, electric vehicle industry company with revenue over 1 billion EUR
-Research and Development in EU and China drives the company success
-Car production in EU and China
-Limited battery production capacity
-Supply chain spans multiple countries, including China and Chile. 
-Proprietary range-boosting technology: 20% longer range compared to competitors
-Public perception of Stellar environmental impact is vital to the brand reputation       
-Software-first approach; proprietary In-vehicle software
-Advanced safety features 
+- EU-based, electric vehicle industry company with revenue over 1 billion EUR
+- Research and Development in EU and China drives the company success
+- Car production in EU and China
+- Limited battery production capacity
+- Supply chain spans multiple countries, including China and Chile. 
+- Proprietary range-boosting technology: 20% longer range compared to competitors
+- Public perception of Stellar environmental impact is vital to the brand reputation       
+- Software-first approach; proprietary In-vehicle software
+- Advanced safety features 
 
 **Sub-STEP: FUNCTION**
 Linked to these elements is a sub-step called 'Function.' It ties the elements back to information security by clarifying what needs to be protected from an information security standpoint. For example, if an element is 'limited battery production,' its function might be ensuring continuous battery production. This context helps in understanding the element from an information security perspective and guides the subsequent risk assessment exercise.
