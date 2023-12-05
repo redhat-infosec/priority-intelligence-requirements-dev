@@ -28,7 +28,6 @@ The initial step involves identifying the core elements of your organization. Th
 - What is your competitive advantage? How do you compare to your competitors?
 - Are certain products or services more important than others?
 - What valuable data do you have? Is there data that keeps you ahead of competitors, proprietary information, R&D, data on relations with partners or customers, or data that would cause damage if released?
-These elements should describe the essence of your organization, including both obvious and subtle aspects. They define what makes your organization unique, why customers choose your products or services, and what sets you apart from competitors. This also includes valuable data like proprietary information, R&D, partner relationships, and sensitive corporate information.
 
 These elements should describe the essence of your organization, including both obvious and subtle aspects. They define what makes your organization unique, why customers choose your products or services, and what sets you apart from competitors. This also includes valuable data like proprietary information, R&D, partner relationships, and sensitive corporate information.
 
